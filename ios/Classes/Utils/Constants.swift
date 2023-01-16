@@ -189,6 +189,7 @@ enum EventSinkKeys: String{
         case uuid
         enum elements: String{
             case key
+            case name
             case address
             case locationDescriptor
             case models
