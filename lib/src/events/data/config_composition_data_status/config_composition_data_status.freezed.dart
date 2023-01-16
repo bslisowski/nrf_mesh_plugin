@@ -14,25 +14,28 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ConfigCompositionDataStatusData _$ConfigCompositionDataStatusDataFromJson(Map<String, dynamic> json) {
+ConfigCompositionDataStatusData _$ConfigCompositionDataStatusDataFromJson(
+    Map<String, dynamic> json) {
   return _ConfigCompositionDataStatusData.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ConfigCompositionDataStatusData {
   int get source => throw _privateConstructorUsedError;
-  ConfigCompositionDataStatusMeshMessage get meshMessage => throw _privateConstructorUsedError;
+  ConfigCompositionDataStatusMeshMessage get meshMessage =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConfigCompositionDataStatusDataCopyWith<ConfigCompositionDataStatusData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ConfigCompositionDataStatusDataCopyWith<ConfigCompositionDataStatusData>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConfigCompositionDataStatusDataCopyWith<$Res> {
   factory $ConfigCompositionDataStatusDataCopyWith(
-          ConfigCompositionDataStatusData value, $Res Function(ConfigCompositionDataStatusData) then) =
+          ConfigCompositionDataStatusData value,
+          $Res Function(ConfigCompositionDataStatusData) then) =
       _$ConfigCompositionDataStatusDataCopyWithImpl<$Res>;
   $Res call({int source, ConfigCompositionDataStatusMeshMessage meshMessage});
 
@@ -40,7 +43,8 @@ abstract class $ConfigCompositionDataStatusDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ConfigCompositionDataStatusDataCopyWithImpl<$Res> implements $ConfigCompositionDataStatusDataCopyWith<$Res> {
+class _$ConfigCompositionDataStatusDataCopyWithImpl<$Res>
+    implements $ConfigCompositionDataStatusDataCopyWith<$Res> {
   _$ConfigCompositionDataStatusDataCopyWithImpl(this._value, this._then);
 
   final ConfigCompositionDataStatusData _value;
@@ -66,7 +70,8 @@ class _$ConfigCompositionDataStatusDataCopyWithImpl<$Res> implements $ConfigComp
 
   @override
   $ConfigCompositionDataStatusMeshMessageCopyWith<$Res> get meshMessage {
-    return $ConfigCompositionDataStatusMeshMessageCopyWith<$Res>(_value.meshMessage, (value) {
+    return $ConfigCompositionDataStatusMeshMessageCopyWith<$Res>(
+        _value.meshMessage, (value) {
       return _then(_value.copyWith(meshMessage: value));
     });
   }
@@ -76,7 +81,8 @@ class _$ConfigCompositionDataStatusDataCopyWithImpl<$Res> implements $ConfigComp
 abstract class _$$_ConfigCompositionDataStatusDataCopyWith<$Res>
     implements $ConfigCompositionDataStatusDataCopyWith<$Res> {
   factory _$$_ConfigCompositionDataStatusDataCopyWith(
-          _$_ConfigCompositionDataStatusData value, $Res Function(_$_ConfigCompositionDataStatusData) then) =
+          _$_ConfigCompositionDataStatusData value,
+          $Res Function(_$_ConfigCompositionDataStatusData) then) =
       __$$_ConfigCompositionDataStatusDataCopyWithImpl<$Res>;
   @override
   $Res call({int source, ConfigCompositionDataStatusMeshMessage meshMessage});
@@ -86,14 +92,17 @@ abstract class _$$_ConfigCompositionDataStatusDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ConfigCompositionDataStatusDataCopyWithImpl<$Res> extends _$ConfigCompositionDataStatusDataCopyWithImpl<$Res>
+class __$$_ConfigCompositionDataStatusDataCopyWithImpl<$Res>
+    extends _$ConfigCompositionDataStatusDataCopyWithImpl<$Res>
     implements _$$_ConfigCompositionDataStatusDataCopyWith<$Res> {
   __$$_ConfigCompositionDataStatusDataCopyWithImpl(
-      _$_ConfigCompositionDataStatusData _value, $Res Function(_$_ConfigCompositionDataStatusData) _then)
+      _$_ConfigCompositionDataStatusData _value,
+      $Res Function(_$_ConfigCompositionDataStatusData) _then)
       : super(_value, (v) => _then(v as _$_ConfigCompositionDataStatusData));
 
   @override
-  _$_ConfigCompositionDataStatusData get _value => super._value as _$_ConfigCompositionDataStatusData;
+  _$_ConfigCompositionDataStatusData get _value =>
+      super._value as _$_ConfigCompositionDataStatusData;
 
   @override
   $Res call({
@@ -116,10 +125,12 @@ class __$$_ConfigCompositionDataStatusDataCopyWithImpl<$Res> extends _$ConfigCom
 /// @nodoc
 
 @JsonSerializable(anyMap: true)
-class _$_ConfigCompositionDataStatusData implements _ConfigCompositionDataStatusData {
+class _$_ConfigCompositionDataStatusData
+    implements _ConfigCompositionDataStatusData {
   const _$_ConfigCompositionDataStatusData(this.source, this.meshMessage);
 
-  factory _$_ConfigCompositionDataStatusData.fromJson(Map<String, dynamic> json) =>
+  factory _$_ConfigCompositionDataStatusData.fromJson(
+          Map<String, dynamic> json) =>
       _$$_ConfigCompositionDataStatusDataFromJson(json);
 
   @override
@@ -138,18 +149,23 @@ class _$_ConfigCompositionDataStatusData implements _ConfigCompositionDataStatus
         (other.runtimeType == runtimeType &&
             other is _$_ConfigCompositionDataStatusData &&
             const DeepCollectionEquality().equals(other.source, source) &&
-            const DeepCollectionEquality().equals(other.meshMessage, meshMessage));
+            const DeepCollectionEquality()
+                .equals(other.meshMessage, meshMessage));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(source), const DeepCollectionEquality().hash(meshMessage));
+      runtimeType,
+      const DeepCollectionEquality().hash(source),
+      const DeepCollectionEquality().hash(meshMessage));
 
   @JsonKey(ignore: true)
   @override
-  _$$_ConfigCompositionDataStatusDataCopyWith<_$_ConfigCompositionDataStatusData> get copyWith =>
-      __$$_ConfigCompositionDataStatusDataCopyWithImpl<_$_ConfigCompositionDataStatusData>(this, _$identity);
+  _$$_ConfigCompositionDataStatusDataCopyWith<
+          _$_ConfigCompositionDataStatusData>
+      get copyWith => __$$_ConfigCompositionDataStatusDataCopyWithImpl<
+          _$_ConfigCompositionDataStatusData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -159,9 +175,11 @@ class _$_ConfigCompositionDataStatusData implements _ConfigCompositionDataStatus
   }
 }
 
-abstract class _ConfigCompositionDataStatusData implements ConfigCompositionDataStatusData {
-  const factory _ConfigCompositionDataStatusData(
-      final int source, final ConfigCompositionDataStatusMeshMessage meshMessage) = _$_ConfigCompositionDataStatusData;
+abstract class _ConfigCompositionDataStatusData
+    implements ConfigCompositionDataStatusData {
+  const factory _ConfigCompositionDataStatusData(final int source,
+          final ConfigCompositionDataStatusMeshMessage meshMessage) =
+      _$_ConfigCompositionDataStatusData;
 
   factory _ConfigCompositionDataStatusData.fromJson(Map<String, dynamic> json) =
       _$_ConfigCompositionDataStatusData.fromJson;
@@ -172,11 +190,14 @@ abstract class _ConfigCompositionDataStatusData implements ConfigCompositionData
   ConfigCompositionDataStatusMeshMessage get meshMessage;
   @override
   @JsonKey(ignore: true)
-  _$$_ConfigCompositionDataStatusDataCopyWith<_$_ConfigCompositionDataStatusData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_ConfigCompositionDataStatusDataCopyWith<
+          _$_ConfigCompositionDataStatusData>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
-ConfigCompositionDataStatusMeshMessage _$ConfigCompositionDataStatusMeshMessageFromJson(Map<String, dynamic> json) {
+ConfigCompositionDataStatusMeshMessage
+    _$ConfigCompositionDataStatusMeshMessageFromJson(
+        Map<String, dynamic> json) {
   return _ConfigCompositionDataStatusMeshMessage.fromJson(json);
 }
 
@@ -188,14 +209,16 @@ mixin _$ConfigCompositionDataStatusMeshMessage {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConfigCompositionDataStatusMeshMessageCopyWith<ConfigCompositionDataStatusMeshMessage> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ConfigCompositionDataStatusMeshMessageCopyWith<
+          ConfigCompositionDataStatusMeshMessage>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConfigCompositionDataStatusMeshMessageCopyWith<$Res> {
   factory $ConfigCompositionDataStatusMeshMessageCopyWith(
-          ConfigCompositionDataStatusMeshMessage value, $Res Function(ConfigCompositionDataStatusMeshMessage) then) =
+          ConfigCompositionDataStatusMeshMessage value,
+          $Res Function(ConfigCompositionDataStatusMeshMessage) then) =
       _$ConfigCompositionDataStatusMeshMessageCopyWithImpl<$Res>;
   $Res call({int source, int? aszmic, int destination});
 }
@@ -235,7 +258,8 @@ class _$ConfigCompositionDataStatusMeshMessageCopyWithImpl<$Res>
 /// @nodoc
 abstract class _$$_ConfigCompositionDataStatusMeshMessageCopyWith<$Res>
     implements $ConfigCompositionDataStatusMeshMessageCopyWith<$Res> {
-  factory _$$_ConfigCompositionDataStatusMeshMessageCopyWith(_$_ConfigCompositionDataStatusMeshMessage value,
+  factory _$$_ConfigCompositionDataStatusMeshMessageCopyWith(
+          _$_ConfigCompositionDataStatusMeshMessage value,
           $Res Function(_$_ConfigCompositionDataStatusMeshMessage) then) =
       __$$_ConfigCompositionDataStatusMeshMessageCopyWithImpl<$Res>;
   @override
@@ -247,11 +271,14 @@ class __$$_ConfigCompositionDataStatusMeshMessageCopyWithImpl<$Res>
     extends _$ConfigCompositionDataStatusMeshMessageCopyWithImpl<$Res>
     implements _$$_ConfigCompositionDataStatusMeshMessageCopyWith<$Res> {
   __$$_ConfigCompositionDataStatusMeshMessageCopyWithImpl(
-      _$_ConfigCompositionDataStatusMeshMessage _value, $Res Function(_$_ConfigCompositionDataStatusMeshMessage) _then)
-      : super(_value, (v) => _then(v as _$_ConfigCompositionDataStatusMeshMessage));
+      _$_ConfigCompositionDataStatusMeshMessage _value,
+      $Res Function(_$_ConfigCompositionDataStatusMeshMessage) _then)
+      : super(_value,
+            (v) => _then(v as _$_ConfigCompositionDataStatusMeshMessage));
 
   @override
-  _$_ConfigCompositionDataStatusMeshMessage get _value => super._value as _$_ConfigCompositionDataStatusMeshMessage;
+  _$_ConfigCompositionDataStatusMeshMessage get _value =>
+      super._value as _$_ConfigCompositionDataStatusMeshMessage;
 
   @override
   $Res call({
@@ -278,10 +305,13 @@ class __$$_ConfigCompositionDataStatusMeshMessageCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ConfigCompositionDataStatusMeshMessage implements _ConfigCompositionDataStatusMeshMessage {
-  const _$_ConfigCompositionDataStatusMeshMessage(this.source, this.aszmic, this.destination);
+class _$_ConfigCompositionDataStatusMeshMessage
+    implements _ConfigCompositionDataStatusMeshMessage {
+  const _$_ConfigCompositionDataStatusMeshMessage(
+      this.source, this.aszmic, this.destination);
 
-  factory _$_ConfigCompositionDataStatusMeshMessage.fromJson(Map<String, dynamic> json) =>
+  factory _$_ConfigCompositionDataStatusMeshMessage.fromJson(
+          Map<String, dynamic> json) =>
       _$$_ConfigCompositionDataStatusMeshMessageFromJson(json);
 
   @override
@@ -303,19 +333,24 @@ class _$_ConfigCompositionDataStatusMeshMessage implements _ConfigCompositionDat
             other is _$_ConfigCompositionDataStatusMeshMessage &&
             const DeepCollectionEquality().equals(other.source, source) &&
             const DeepCollectionEquality().equals(other.aszmic, aszmic) &&
-            const DeepCollectionEquality().equals(other.destination, destination));
+            const DeepCollectionEquality()
+                .equals(other.destination, destination));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(source),
-      const DeepCollectionEquality().hash(aszmic), const DeepCollectionEquality().hash(destination));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(source),
+      const DeepCollectionEquality().hash(aszmic),
+      const DeepCollectionEquality().hash(destination));
 
   @JsonKey(ignore: true)
   @override
-  _$$_ConfigCompositionDataStatusMeshMessageCopyWith<_$_ConfigCompositionDataStatusMeshMessage> get copyWith =>
-      __$$_ConfigCompositionDataStatusMeshMessageCopyWithImpl<_$_ConfigCompositionDataStatusMeshMessage>(
-          this, _$identity);
+  _$$_ConfigCompositionDataStatusMeshMessageCopyWith<
+          _$_ConfigCompositionDataStatusMeshMessage>
+      get copyWith => __$$_ConfigCompositionDataStatusMeshMessageCopyWithImpl<
+          _$_ConfigCompositionDataStatusMeshMessage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -325,11 +360,14 @@ class _$_ConfigCompositionDataStatusMeshMessage implements _ConfigCompositionDat
   }
 }
 
-abstract class _ConfigCompositionDataStatusMeshMessage implements ConfigCompositionDataStatusMeshMessage {
-  const factory _ConfigCompositionDataStatusMeshMessage(final int source, final int? aszmic, final int destination) =
+abstract class _ConfigCompositionDataStatusMeshMessage
+    implements ConfigCompositionDataStatusMeshMessage {
+  const factory _ConfigCompositionDataStatusMeshMessage(
+          final int source, final int? aszmic, final int destination) =
       _$_ConfigCompositionDataStatusMeshMessage;
 
-  factory _ConfigCompositionDataStatusMeshMessage.fromJson(Map<String, dynamic> json) =
+  factory _ConfigCompositionDataStatusMeshMessage.fromJson(
+          Map<String, dynamic> json) =
       _$_ConfigCompositionDataStatusMeshMessage.fromJson;
 
   @override
@@ -340,6 +378,7 @@ abstract class _ConfigCompositionDataStatusMeshMessage implements ConfigComposit
   int get destination;
   @override
   @JsonKey(ignore: true)
-  _$$_ConfigCompositionDataStatusMeshMessageCopyWith<_$_ConfigCompositionDataStatusMeshMessage> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_ConfigCompositionDataStatusMeshMessageCopyWith<
+          _$_ConfigCompositionDataStatusMeshMessage>
+      get copyWith => throw _privateConstructorUsedError;
 }

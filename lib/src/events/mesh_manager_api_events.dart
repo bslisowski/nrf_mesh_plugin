@@ -40,6 +40,9 @@ class MeshManagerApiEvent {
   static const doozScenarioStatus = MeshManagerApiEvent._('onDoozScenarioStatus');
   static const doozEpochStatus = MeshManagerApiEvent._('onDoozEpochStatus');
 
+  static const sceneStatus = MeshManagerApiEvent._('onSceneStatus');
+  static const sceneRegisterStatus = MeshManagerApiEvent._('onSceneRegisterStatus');
+
   static const lightLightnessStatus = MeshManagerApiEvent._('onLightLightnessStatus');
   static const lightCtlStatus = MeshManagerApiEvent._('onLightCtlStatus');
   static const lightHslStatus = MeshManagerApiEvent._('onLightHslStatus');

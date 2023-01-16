@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nordic_nrf_mesh.iml" filepath="$PROJECT_DIR$/.idea/modules/nordic_nrf_mesh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nordic_nrf_mesh.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nordic_nrf_mesh.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nordic_nrf_mesh.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nordic_nrf_mesh.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-873993747/nordic_nrf_mesh.mesh.iml" filepath="$PROJECT_DIR$/.idea/modules/-873993747/nordic_nrf_mesh.mesh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nordic_nrf_mesh.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nordic_nrf_mesh.unitTest.iml" />
+    </modules>
+  </component>
+</project>

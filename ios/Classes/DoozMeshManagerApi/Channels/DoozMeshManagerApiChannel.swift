@@ -49,6 +49,7 @@ enum DoozMeshManagerApiChannel {
     case getV2MagicLevel(_ data: GetV2MagicLevelArguments)
     case doozScenarioEpochSet(_ data: DoozEpochSetArguments)
     case deprovision(_ data: DeprovisionArguments)
+    case sendSceneStore(_ data: SendSceneStoreArguments)
 
     case error(_ error: Error)
     
@@ -139,7 +140,8 @@ enum DoozMeshManagerApiChannel {
             case "handleWriteCallbacks":
                 self = .handleWriteCallbacks(try HandleWriteCallbacksArguments(arguments))
             
-            
+            case "sendSceneStore":
+                self = .sendSceneStore(try SendSceneStoreArguments(arguments))
             case "cachedProvisionedMeshNodeUuid":
                 self = .cachedProvisionedMeshNodeUuid
             case "deprovision":

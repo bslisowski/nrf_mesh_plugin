@@ -140,6 +140,30 @@ class DoozMeshNetwork(private val binaryMessenger: BinaryMessenger, var meshNetw
                     )
                 })
             }
+            "addScene" -> {
+                val scene = meshNetwork.createScene(meshNetwork.selectedProvisioner)
+                val success = meshNetwork.addScene(scene)
+                result.success(mapOf(
+                    "scene" to mapOf(
+                        "name" to scene.name,
+                        "number" to scene.number,
+                        "addresses" to scene.addresses,
+                        "meshUuid" to scene.meshUuid
+                    ),
+                    "successfullyAdded" to success
+                ))
+            }
+            "scenes" -> {
+                result.success(meshNetwork.scenes.map {
+                    mapOf(
+                        "name" to it.name,
+                        "number" to it.number,
+                        "addresses" to it.addresses,
+                        "meshUuid" to it.meshUuid
+                    )
+                }
+                )
+            }
             "nodes" -> {
                 val provisionedMeshNodes = meshNetwork.nodes.map { node ->
                     DoozProvisionedMeshNode(binaryMessenger, node)

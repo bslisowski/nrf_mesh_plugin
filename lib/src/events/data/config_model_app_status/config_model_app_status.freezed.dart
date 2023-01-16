@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'config_model_app_status.dart';
 
@@ -10,31 +12,12 @@ part of 'config_model_app_status.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ConfigModelAppStatusData _$ConfigModelAppStatusDataFromJson(Map<String, dynamic> json) {
+ConfigModelAppStatusData _$ConfigModelAppStatusDataFromJson(
+    Map<String, dynamic> json) {
   return _ConfigModelAppStatusData.fromJson(json);
 }
-
-/// @nodoc
-class _$ConfigModelAppStatusDataTearOff {
-  const _$ConfigModelAppStatusDataTearOff();
-
-  _ConfigModelAppStatusData call(int elementAddress, int modelId, int appKeyIndex) {
-    return _ConfigModelAppStatusData(
-      elementAddress,
-      modelId,
-      appKeyIndex,
-    );
-  }
-
-  ConfigModelAppStatusData fromJson(Map<String, Object> json) {
-    return ConfigModelAppStatusData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ConfigModelAppStatusData = _$ConfigModelAppStatusDataTearOff();
 
 /// @nodoc
 mixin _$ConfigModelAppStatusData {
@@ -44,19 +27,21 @@ mixin _$ConfigModelAppStatusData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConfigModelAppStatusDataCopyWith<ConfigModelAppStatusData> get copyWith => throw _privateConstructorUsedError;
+  $ConfigModelAppStatusDataCopyWith<ConfigModelAppStatusData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConfigModelAppStatusDataCopyWith<$Res> {
-  factory $ConfigModelAppStatusDataCopyWith(
-          ConfigModelAppStatusData value, $Res Function(ConfigModelAppStatusData) then) =
+  factory $ConfigModelAppStatusDataCopyWith(ConfigModelAppStatusData value,
+          $Res Function(ConfigModelAppStatusData) then) =
       _$ConfigModelAppStatusDataCopyWithImpl<$Res>;
   $Res call({int elementAddress, int modelId, int appKeyIndex});
 }
 
 /// @nodoc
-class _$ConfigModelAppStatusDataCopyWithImpl<$Res> implements $ConfigModelAppStatusDataCopyWith<$Res> {
+class _$ConfigModelAppStatusDataCopyWithImpl<$Res>
+    implements $ConfigModelAppStatusDataCopyWith<$Res> {
   _$ConfigModelAppStatusDataCopyWithImpl(this._value, this._then);
 
   final ConfigModelAppStatusData _value;
@@ -87,23 +72,27 @@ class _$ConfigModelAppStatusDataCopyWithImpl<$Res> implements $ConfigModelAppSta
 }
 
 /// @nodoc
-abstract class _$ConfigModelAppStatusDataCopyWith<$Res> implements $ConfigModelAppStatusDataCopyWith<$Res> {
-  factory _$ConfigModelAppStatusDataCopyWith(
-          _ConfigModelAppStatusData value, $Res Function(_ConfigModelAppStatusData) then) =
-      __$ConfigModelAppStatusDataCopyWithImpl<$Res>;
+abstract class _$$_ConfigModelAppStatusDataCopyWith<$Res>
+    implements $ConfigModelAppStatusDataCopyWith<$Res> {
+  factory _$$_ConfigModelAppStatusDataCopyWith(
+          _$_ConfigModelAppStatusData value,
+          $Res Function(_$_ConfigModelAppStatusData) then) =
+      __$$_ConfigModelAppStatusDataCopyWithImpl<$Res>;
   @override
   $Res call({int elementAddress, int modelId, int appKeyIndex});
 }
 
 /// @nodoc
-class __$ConfigModelAppStatusDataCopyWithImpl<$Res> extends _$ConfigModelAppStatusDataCopyWithImpl<$Res>
-    implements _$ConfigModelAppStatusDataCopyWith<$Res> {
-  __$ConfigModelAppStatusDataCopyWithImpl(
-      _ConfigModelAppStatusData _value, $Res Function(_ConfigModelAppStatusData) _then)
-      : super(_value, (v) => _then(v as _ConfigModelAppStatusData));
+class __$$_ConfigModelAppStatusDataCopyWithImpl<$Res>
+    extends _$ConfigModelAppStatusDataCopyWithImpl<$Res>
+    implements _$$_ConfigModelAppStatusDataCopyWith<$Res> {
+  __$$_ConfigModelAppStatusDataCopyWithImpl(_$_ConfigModelAppStatusData _value,
+      $Res Function(_$_ConfigModelAppStatusData) _then)
+      : super(_value, (v) => _then(v as _$_ConfigModelAppStatusData));
 
   @override
-  _ConfigModelAppStatusData get _value => super._value as _ConfigModelAppStatusData;
+  _$_ConfigModelAppStatusData get _value =>
+      super._value as _$_ConfigModelAppStatusData;
 
   @override
   $Res call({
@@ -111,7 +100,7 @@ class __$ConfigModelAppStatusDataCopyWithImpl<$Res> extends _$ConfigModelAppStat
     Object? modelId = freezed,
     Object? appKeyIndex = freezed,
   }) {
-    return _then(_ConfigModelAppStatusData(
+    return _then(_$_ConfigModelAppStatusData(
       elementAddress == freezed
           ? _value.elementAddress
           : elementAddress // ignore: cast_nullable_to_non_nullable
@@ -131,10 +120,11 @@ class __$ConfigModelAppStatusDataCopyWithImpl<$Res> extends _$ConfigModelAppStat
 /// @nodoc
 @JsonSerializable()
 class _$_ConfigModelAppStatusData implements _ConfigModelAppStatusData {
-  const _$_ConfigModelAppStatusData(this.elementAddress, this.modelId, this.appKeyIndex);
+  const _$_ConfigModelAppStatusData(
+      this.elementAddress, this.modelId, this.appKeyIndex);
 
   factory _$_ConfigModelAppStatusData.fromJson(Map<String, dynamic> json) =>
-      _$_$_ConfigModelAppStatusDataFromJson(json);
+      _$$_ConfigModelAppStatusDataFromJson(json);
 
   @override
   final int elementAddress;
@@ -151,45 +141,53 @@ class _$_ConfigModelAppStatusData implements _ConfigModelAppStatusData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ConfigModelAppStatusData &&
-            (identical(other.elementAddress, elementAddress) ||
-                const DeepCollectionEquality().equals(other.elementAddress, elementAddress)) &&
-            (identical(other.modelId, modelId) || const DeepCollectionEquality().equals(other.modelId, modelId)) &&
-            (identical(other.appKeyIndex, appKeyIndex) ||
-                const DeepCollectionEquality().equals(other.appKeyIndex, appKeyIndex)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ConfigModelAppStatusData &&
+            const DeepCollectionEquality()
+                .equals(other.elementAddress, elementAddress) &&
+            const DeepCollectionEquality().equals(other.modelId, modelId) &&
+            const DeepCollectionEquality()
+                .equals(other.appKeyIndex, appKeyIndex));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(elementAddress) ^
-      const DeepCollectionEquality().hash(modelId) ^
-      const DeepCollectionEquality().hash(appKeyIndex);
 
   @JsonKey(ignore: true)
   @override
-  _$ConfigModelAppStatusDataCopyWith<_ConfigModelAppStatusData> get copyWith =>
-      __$ConfigModelAppStatusDataCopyWithImpl<_ConfigModelAppStatusData>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(elementAddress),
+      const DeepCollectionEquality().hash(modelId),
+      const DeepCollectionEquality().hash(appKeyIndex));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ConfigModelAppStatusDataCopyWith<_$_ConfigModelAppStatusData>
+      get copyWith => __$$_ConfigModelAppStatusDataCopyWithImpl<
+          _$_ConfigModelAppStatusData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ConfigModelAppStatusDataToJson(this);
+    return _$$_ConfigModelAppStatusDataToJson(
+      this,
+    );
   }
 }
 
 abstract class _ConfigModelAppStatusData implements ConfigModelAppStatusData {
-  const factory _ConfigModelAppStatusData(int elementAddress, int modelId, int appKeyIndex) =
+  const factory _ConfigModelAppStatusData(
+          final int elementAddress, final int modelId, final int appKeyIndex) =
       _$_ConfigModelAppStatusData;
 
-  factory _ConfigModelAppStatusData.fromJson(Map<String, dynamic> json) = _$_ConfigModelAppStatusData.fromJson;
+  factory _ConfigModelAppStatusData.fromJson(Map<String, dynamic> json) =
+      _$_ConfigModelAppStatusData.fromJson;
 
   @override
-  int get elementAddress => throw _privateConstructorUsedError;
+  int get elementAddress;
   @override
-  int get modelId => throw _privateConstructorUsedError;
+  int get modelId;
   @override
-  int get appKeyIndex => throw _privateConstructorUsedError;
+  int get appKeyIndex;
   @override
   @JsonKey(ignore: true)
-  _$ConfigModelAppStatusDataCopyWith<_ConfigModelAppStatusData> get copyWith => throw _privateConstructorUsedError;
+  _$$_ConfigModelAppStatusDataCopyWith<_$_ConfigModelAppStatusData>
+      get copyWith => throw _privateConstructorUsedError;
 }

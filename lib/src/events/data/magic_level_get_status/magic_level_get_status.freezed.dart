@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'magic_level_get_status.dart';
 
@@ -10,34 +12,12 @@ part of 'magic_level_get_status.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-MagicLevelGetStatusData _$MagicLevelGetStatusDataFromJson(Map<String, dynamic> json) {
+MagicLevelGetStatusData _$MagicLevelGetStatusDataFromJson(
+    Map<String, dynamic> json) {
   return _MagicLevelGetStatusData.fromJson(json);
 }
-
-/// @nodoc
-class _$MagicLevelGetStatusDataTearOff {
-  const _$MagicLevelGetStatusDataTearOff();
-
-  _MagicLevelGetStatusData call(int io, int index, int value, int correlation, int source, int destination) {
-    return _MagicLevelGetStatusData(
-      io,
-      index,
-      value,
-      correlation,
-      source,
-      destination,
-    );
-  }
-
-  MagicLevelGetStatusData fromJson(Map<String, Object> json) {
-    return MagicLevelGetStatusData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $MagicLevelGetStatusData = _$MagicLevelGetStatusDataTearOff();
 
 /// @nodoc
 mixin _$MagicLevelGetStatusData {
@@ -50,18 +30,27 @@ mixin _$MagicLevelGetStatusData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MagicLevelGetStatusDataCopyWith<MagicLevelGetStatusData> get copyWith => throw _privateConstructorUsedError;
+  $MagicLevelGetStatusDataCopyWith<MagicLevelGetStatusData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MagicLevelGetStatusDataCopyWith<$Res> {
-  factory $MagicLevelGetStatusDataCopyWith(MagicLevelGetStatusData value, $Res Function(MagicLevelGetStatusData) then) =
+  factory $MagicLevelGetStatusDataCopyWith(MagicLevelGetStatusData value,
+          $Res Function(MagicLevelGetStatusData) then) =
       _$MagicLevelGetStatusDataCopyWithImpl<$Res>;
-  $Res call({int io, int index, int value, int correlation, int source, int destination});
+  $Res call(
+      {int io,
+      int index,
+      int value,
+      int correlation,
+      int source,
+      int destination});
 }
 
 /// @nodoc
-class _$MagicLevelGetStatusDataCopyWithImpl<$Res> implements $MagicLevelGetStatusDataCopyWith<$Res> {
+class _$MagicLevelGetStatusDataCopyWithImpl<$Res>
+    implements $MagicLevelGetStatusDataCopyWith<$Res> {
   _$MagicLevelGetStatusDataCopyWithImpl(this._value, this._then);
 
   final MagicLevelGetStatusData _value;
@@ -107,22 +96,32 @@ class _$MagicLevelGetStatusDataCopyWithImpl<$Res> implements $MagicLevelGetStatu
 }
 
 /// @nodoc
-abstract class _$MagicLevelGetStatusDataCopyWith<$Res> implements $MagicLevelGetStatusDataCopyWith<$Res> {
-  factory _$MagicLevelGetStatusDataCopyWith(
-          _MagicLevelGetStatusData value, $Res Function(_MagicLevelGetStatusData) then) =
-      __$MagicLevelGetStatusDataCopyWithImpl<$Res>;
+abstract class _$$_MagicLevelGetStatusDataCopyWith<$Res>
+    implements $MagicLevelGetStatusDataCopyWith<$Res> {
+  factory _$$_MagicLevelGetStatusDataCopyWith(_$_MagicLevelGetStatusData value,
+          $Res Function(_$_MagicLevelGetStatusData) then) =
+      __$$_MagicLevelGetStatusDataCopyWithImpl<$Res>;
   @override
-  $Res call({int io, int index, int value, int correlation, int source, int destination});
+  $Res call(
+      {int io,
+      int index,
+      int value,
+      int correlation,
+      int source,
+      int destination});
 }
 
 /// @nodoc
-class __$MagicLevelGetStatusDataCopyWithImpl<$Res> extends _$MagicLevelGetStatusDataCopyWithImpl<$Res>
-    implements _$MagicLevelGetStatusDataCopyWith<$Res> {
-  __$MagicLevelGetStatusDataCopyWithImpl(_MagicLevelGetStatusData _value, $Res Function(_MagicLevelGetStatusData) _then)
-      : super(_value, (v) => _then(v as _MagicLevelGetStatusData));
+class __$$_MagicLevelGetStatusDataCopyWithImpl<$Res>
+    extends _$MagicLevelGetStatusDataCopyWithImpl<$Res>
+    implements _$$_MagicLevelGetStatusDataCopyWith<$Res> {
+  __$$_MagicLevelGetStatusDataCopyWithImpl(_$_MagicLevelGetStatusData _value,
+      $Res Function(_$_MagicLevelGetStatusData) _then)
+      : super(_value, (v) => _then(v as _$_MagicLevelGetStatusData));
 
   @override
-  _MagicLevelGetStatusData get _value => super._value as _MagicLevelGetStatusData;
+  _$_MagicLevelGetStatusData get _value =>
+      super._value as _$_MagicLevelGetStatusData;
 
   @override
   $Res call({
@@ -133,7 +132,7 @@ class __$MagicLevelGetStatusDataCopyWithImpl<$Res> extends _$MagicLevelGetStatus
     Object? source = freezed,
     Object? destination = freezed,
   }) {
-    return _then(_MagicLevelGetStatusData(
+    return _then(_$_MagicLevelGetStatusData(
       io == freezed
           ? _value.io
           : io // ignore: cast_nullable_to_non_nullable
@@ -165,9 +164,11 @@ class __$MagicLevelGetStatusDataCopyWithImpl<$Res> extends _$MagicLevelGetStatus
 /// @nodoc
 @JsonSerializable()
 class _$_MagicLevelGetStatusData implements _MagicLevelGetStatusData {
-  const _$_MagicLevelGetStatusData(this.io, this.index, this.value, this.correlation, this.source, this.destination);
+  const _$_MagicLevelGetStatusData(this.io, this.index, this.value,
+      this.correlation, this.source, this.destination);
 
-  factory _$_MagicLevelGetStatusData.fromJson(Map<String, dynamic> json) => _$_$_MagicLevelGetStatusDataFromJson(json);
+  factory _$_MagicLevelGetStatusData.fromJson(Map<String, dynamic> json) =>
+      _$$_MagicLevelGetStatusDataFromJson(json);
 
   @override
   final int io;
@@ -190,57 +191,70 @@ class _$_MagicLevelGetStatusData implements _MagicLevelGetStatusData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MagicLevelGetStatusData &&
-            (identical(other.io, io) || const DeepCollectionEquality().equals(other.io, io)) &&
-            (identical(other.index, index) || const DeepCollectionEquality().equals(other.index, index)) &&
-            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)) &&
-            (identical(other.correlation, correlation) ||
-                const DeepCollectionEquality().equals(other.correlation, correlation)) &&
-            (identical(other.source, source) || const DeepCollectionEquality().equals(other.source, source)) &&
-            (identical(other.destination, destination) ||
-                const DeepCollectionEquality().equals(other.destination, destination)));
+        (other.runtimeType == runtimeType &&
+            other is _$_MagicLevelGetStatusData &&
+            const DeepCollectionEquality().equals(other.io, io) &&
+            const DeepCollectionEquality().equals(other.index, index) &&
+            const DeepCollectionEquality().equals(other.value, value) &&
+            const DeepCollectionEquality()
+                .equals(other.correlation, correlation) &&
+            const DeepCollectionEquality().equals(other.source, source) &&
+            const DeepCollectionEquality()
+                .equals(other.destination, destination));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(io) ^
-      const DeepCollectionEquality().hash(index) ^
-      const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(correlation) ^
-      const DeepCollectionEquality().hash(source) ^
-      const DeepCollectionEquality().hash(destination);
 
   @JsonKey(ignore: true)
   @override
-  _$MagicLevelGetStatusDataCopyWith<_MagicLevelGetStatusData> get copyWith =>
-      __$MagicLevelGetStatusDataCopyWithImpl<_MagicLevelGetStatusData>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(io),
+      const DeepCollectionEquality().hash(index),
+      const DeepCollectionEquality().hash(value),
+      const DeepCollectionEquality().hash(correlation),
+      const DeepCollectionEquality().hash(source),
+      const DeepCollectionEquality().hash(destination));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_MagicLevelGetStatusDataCopyWith<_$_MagicLevelGetStatusData>
+      get copyWith =>
+          __$$_MagicLevelGetStatusDataCopyWithImpl<_$_MagicLevelGetStatusData>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MagicLevelGetStatusDataToJson(this);
+    return _$$_MagicLevelGetStatusDataToJson(
+      this,
+    );
   }
 }
 
 abstract class _MagicLevelGetStatusData implements MagicLevelGetStatusData {
-  const factory _MagicLevelGetStatusData(int io, int index, int value, int correlation, int source, int destination) =
-      _$_MagicLevelGetStatusData;
+  const factory _MagicLevelGetStatusData(
+      final int io,
+      final int index,
+      final int value,
+      final int correlation,
+      final int source,
+      final int destination) = _$_MagicLevelGetStatusData;
 
-  factory _MagicLevelGetStatusData.fromJson(Map<String, dynamic> json) = _$_MagicLevelGetStatusData.fromJson;
+  factory _MagicLevelGetStatusData.fromJson(Map<String, dynamic> json) =
+      _$_MagicLevelGetStatusData.fromJson;
 
   @override
-  int get io => throw _privateConstructorUsedError;
+  int get io;
   @override
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @override
-  int get value => throw _privateConstructorUsedError;
+  int get value;
   @override
-  int get correlation => throw _privateConstructorUsedError;
+  int get correlation;
   @override
-  int get source => throw _privateConstructorUsedError;
+  int get source;
   @override
-  int get destination => throw _privateConstructorUsedError;
+  int get destination;
   @override
   @JsonKey(ignore: true)
-  _$MagicLevelGetStatusDataCopyWith<_MagicLevelGetStatusData> get copyWith => throw _privateConstructorUsedError;
+  _$$_MagicLevelGetStatusDataCopyWith<_$_MagicLevelGetStatusData>
+      get copyWith => throw _privateConstructorUsedError;
 }

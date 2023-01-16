@@ -16,6 +16,8 @@ enum DoozMeshNetworkChannel {
     case groups
     case removeGroup(_ data: RemoveGroupArguments)
     case getElementsForGroup(_ data: GetElementsForGroupArguments)
+    case addScene(_ data: AddSceneArguments)
+    case scenes
     case selectProvisioner(_ data: SelectProvisionerArguments)
     case getProvisionersAsJson
     case getNodeUsingUUID(_ data: GetNodeUsingUUIDArguments)
@@ -49,6 +51,10 @@ enum DoozMeshNetworkChannel {
                 self = .addGroupWithName(try AddGroupWithNameArguments(arguments))
             case "groups":
                 self = .groups
+            case "addScene":
+                self = .addScene(try AddSceneArguments(arguments))
+            case "scenes":
+                self = .scenes
             case "removeGroup":
                 print("🥂  Received flutter call for removeGroup with the args: \(String(describing: arguments))")
                 self = .removeGroup(try RemoveGroupArguments(arguments))

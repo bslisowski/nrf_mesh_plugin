@@ -6,23 +6,24 @@ part of 'config_model_publication_status.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ConfigModelPublicationStatus _$_$_ConfigModelPublicationStatusFromJson(Map<String, dynamic> json) {
-  return _$_ConfigModelPublicationStatus(
-    json['elementAddress'] as int,
-    json['publishAddress'] as int,
-    json['appKeyIndex'] as int,
-    json['credentialFlag'] as bool,
-    json['publishTtl'] as int,
-    json['publicationSteps'] as int,
-    json['publicationResolution'] as int,
-    json['retransmitCount'] as int,
-    json['retransmitIntervalSteps'] as int,
-    json['modelIdentifier'] as int,
-    json['isSuccessful'] as bool,
-  );
-}
+_$_ConfigModelPublicationStatus _$$_ConfigModelPublicationStatusFromJson(
+        Map<String, dynamic> json) =>
+    _$_ConfigModelPublicationStatus(
+      json['elementAddress'] as int,
+      json['publishAddress'] as int,
+      json['appKeyIndex'] as int,
+      json['credentialFlag'] as bool,
+      json['publishTtl'] as int,
+      json['publicationSteps'] as int,
+      json['publicationResolution'] as int,
+      json['retransmitCount'] as int,
+      json['retransmitIntervalSteps'] as int,
+      json['modelIdentifier'] as int,
+      json['isSuccessful'] as bool,
+    );
 
-Map<String, dynamic> _$_$_ConfigModelPublicationStatusToJson(_$_ConfigModelPublicationStatus instance) =>
+Map<String, dynamic> _$$_ConfigModelPublicationStatusToJson(
+        _$_ConfigModelPublicationStatus instance) =>
     <String, dynamic>{
       'elementAddress': instance.elementAddress,
       'publishAddress': instance.publishAddress,

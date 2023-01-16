@@ -72,6 +72,16 @@ extension DoozMeshManagerApi: MeshNetworkDelegate{
                 EventSinkKeys.message.transitionSteps.rawValue : status.remainingTime?.steps ?? 0,
             ]
             _sendFlutterMessage(message)
+        case let status as SceneRegisterStatus:
+            let message: FlutterMessage = [
+                EventSinkKeys.eventName.rawValue : MessageEvent.onSceneRegisterStatus.rawValue,
+                EventSinkKeys.source.rawValue : source,
+                EventSinkKeys.destination.rawValue : destination,
+                EventSinkKeys.message.currentScene.rawValue : status.currentScene,
+                EventSinkKeys.message.sceneList.rawValue : status.scenes
+            ]
+            _sendFlutterMessage(message)
+
         case let status as ConfigModelSubscriptionStatus:
             let message: FlutterMessage = [
                 EventSinkKeys.eventName.rawValue : MessageEvent.onConfigModelSubscriptionStatus.rawValue,

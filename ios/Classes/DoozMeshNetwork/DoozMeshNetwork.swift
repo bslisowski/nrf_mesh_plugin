@@ -166,6 +166,40 @@ private extension DoozMeshNetwork {
             })
             
             result(groups)
+        
+        case .addScene():
+            if
+                let provisioner = meshNetwork.localProvisioner {
+                    do {
+                        let scene = try Scene(provisioner: provisioner)
+                        try meshNetwork.add(scene: scene)
+                        result(
+                            [
+                                "scene" : [
+                                    "name" : scene.name,
+                                    "number" : scene.number,
+                                    "addresses" : scene.addresses,
+                                    "meshUuid" : meshNetwork.uuid.uuidString
+                                ],
+                                "successfullyAdded" : true
+                            ]
+                        )
+                    }catch{
+                        let nsError = error as NSError
+                        result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
+                    }
+                }
+
+        case .scenes:
+            let scenes = meshNetwork.scenes.map({ scene in 
+                return [
+                    "name" : scene.name,
+                    "number" : scene.number,
+                    "addresses" : scene.addresses,
+                    "meshUuid" : meshNetwork.uuid.uuidString
+                ]
+            })
+            result(scenes)
             
         case .removeGroup(let data):
             #warning("TODO: impl. meshAddress hex in most cases")

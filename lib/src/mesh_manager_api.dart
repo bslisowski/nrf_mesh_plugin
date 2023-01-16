@@ -49,6 +49,8 @@ class MeshManagerApi {
   late final _onLightCtlStatusController = StreamController<LightCtlStatusData>.broadcast();
   late final _onLightHslStatusController = StreamController<LightHslStatusData>.broadcast();
   late final _onConfigKeyRefreshPhaseStatusController = StreamController<ConfigKeyRefreshPhaseStatus>.broadcast();
+  late final _onSceneStatusController = StreamController<SceneStatusData>.broadcast();
+  late final _onSceneRegisterStatusController = StreamController<SceneRegisterStatusData>.broadcast();
   // stream subs
   late StreamSubscription<MeshNetwork> _onNetworkLoadedSubscription;
   late StreamSubscription<MeshNetwork> _onNetworkImportedSubscription;
@@ -79,6 +81,8 @@ class MeshManagerApi {
   late StreamSubscription<LightCtlStatusData> _onLightCtlStatusSubscription;
   late StreamSubscription<LightHslStatusData> _onLightHslStatusSubscription;
   late StreamSubscription<ConfigKeyRefreshPhaseStatus> _onConfigKeyRefreshPhaseStatusSubscription;
+  late StreamSubscription<SceneStatusData> _onSceneStatusSubscription;
+  late StreamSubscription<SceneRegisterStatusData> _onSceneRegisterStatusSubscription;
 
   MeshNetwork? _lastMeshNetwork;
 
@@ -200,6 +204,15 @@ class MeshManagerApi {
         .where((event) => event['eventName'] == MeshManagerApiEvent.configBeaconStatus.value)
         .map((event) => ConfigBeaconStatus.fromJson(event))
         .listen(_onConfigBeaconStatusController.add);
+
+    _onSceneStatusSubscription = _eventChannelStream
+        .where((event) => event['eventName'] == MeshManagerApiEvent.sceneStatus.value)
+        .map((event) => SceneStatusData.fromJson(event))
+        .listen(_onSceneStatusController.add);
+    _onSceneRegisterStatusSubscription = _eventChannelStream
+        .where((event) => event['eventName'] == MeshManagerApiEvent.sceneRegisterStatus.value)
+        .map((event) => SceneRegisterStatusData.fromJson(event))
+        .listen(_onSceneRegisterStatusController.add);
   }
   Stream<ConfigBeaconStatus> get onConfigBeaconStatus => _onConfigBeaconStatusController.stream;
 
@@ -262,6 +275,10 @@ class MeshManagerApi {
 
   Stream<ConfigKeyRefreshPhaseStatus> get onConfigKeyRefreshPhaseStatus =>
       _onConfigKeyRefreshPhaseStatusController.stream;
+
+  Stream<SceneStatusData> get onSceneStatus => _onSceneStatusController.stream;
+
+  Stream<SceneRegisterStatusData> get onSceneRegisterStatus => _onSceneRegisterStatusController.stream;
 
   /// Checks if the node is advertising with Node Identity
   Future<bool> isAdvertisedWithNodeIdentity(final List<int> serviceData) async {
@@ -356,7 +373,11 @@ class MeshManagerApi {
         _onConfigKeyRefreshPhaseStatusSubscription.cancel(),
         _onConfigKeyRefreshPhaseStatusController.close(),
         _onConfigBeaconStatusSubscription.cancel(),
-        _onConfigBeaconStatusController.close()
+        _onConfigBeaconStatusController.close(),
+        _onSceneStatusSubscription.cancel(),
+        _onSceneStatusController.close(),
+        _onSceneRegisterStatusSubscription.cancel(),
+        _onSceneRegisterStatusController.close()
       ]);
 
   /// Loads the mesh network from the local database.
@@ -522,6 +543,39 @@ class MeshManagerApi {
       'io': io,
       'index': index,
       'correlation': correlation,
+      'address': address,
+      'keyIndex': keyIndex,
+    });
+    return status;
+  }
+
+  /// Will send a SceneStore message to the given [address]
+  Future<SceneRegisterStatusData> sendSceneStore(
+    int address,
+    int sceneNumber, {
+    int keyIndex = 0,
+  }) async {
+    final status = _onSceneRegisterStatusController.stream.firstWhere(
+      (element) => element.source == address,
+      orElse: () => const SceneRegisterStatusData(-1, -1, -1, null),
+    );
+    await _methodChannel.invokeMethod('sendSceneStore', {
+      'sceneNumber': sceneNumber,
+      'address': address,
+      'keyIndex': keyIndex,
+    });
+    return status;
+  }
+
+  Future<SceneRegisterStatusData> sendSceneRegisterGet(
+    int address, {
+    int keyIndex = 0,
+  }) async {
+    final status = _onSceneRegisterStatusController.stream.firstWhere(
+      (element) => element.source == address,
+      orElse: () => const SceneRegisterStatusData(-1, -1, -1, null),
+    );
+    await _methodChannel.invokeMethod('sendSceneRegisterGet', {
       'address': address,
       'keyIndex': keyIndex,
     });

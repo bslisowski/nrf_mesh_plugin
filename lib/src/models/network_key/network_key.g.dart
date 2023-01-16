@@ -6,24 +6,24 @@ part of 'network_key.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NetworkKey _$_$_NetworkKeyFromJson(Map<String, dynamic> json) {
-  return _$_NetworkKey(
-    json['name'] as String,
-    json['netKeyIndex'] as int,
-    json['phase'] as int,
-    json['phaseDescription'] as String,
-    json['isMinSecurity'] as bool,
-    (json['netKeyBytes'] as List<dynamic>).map((e) => e as int).toList(),
-    (json['oldNetKeyBytes'] as List<dynamic>?)?.map((e) => e as int).toList(),
-    (json['txNetworkKey'] as List<dynamic>).map((e) => e as int).toList(),
-    (json['identityKey'] as List<dynamic>).map((e) => e as int).toList(),
-    (json['oldIdentityKey'] as List<dynamic>?)?.map((e) => e as int).toList(),
-    json['meshUuid'] as String,
-    json['timestamp'] as int,
-  );
-}
+_$_NetworkKey _$$_NetworkKeyFromJson(Map<String, dynamic> json) =>
+    _$_NetworkKey(
+      json['name'] as String,
+      json['netKeyIndex'] as int,
+      json['phase'] as int,
+      json['phaseDescription'] as String,
+      json['isMinSecurity'] as bool,
+      (json['netKeyBytes'] as List<dynamic>).map((e) => e as int).toList(),
+      (json['oldNetKeyBytes'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      (json['txNetworkKey'] as List<dynamic>).map((e) => e as int).toList(),
+      (json['identityKey'] as List<dynamic>).map((e) => e as int).toList(),
+      (json['oldIdentityKey'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      json['meshUuid'] as String,
+      json['timestamp'] as int,
+    );
 
-Map<String, dynamic> _$_$_NetworkKeyToJson(_$_NetworkKey instance) => <String, dynamic>{
+Map<String, dynamic> _$$_NetworkKeyToJson(_$_NetworkKey instance) =>
+    <String, dynamic>{
       'name': instance.name,
       'netKeyIndex': instance.netKeyIndex,
       'phase': instance.phase,

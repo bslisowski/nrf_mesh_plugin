@@ -262,6 +262,30 @@ private extension DoozMeshManagerApi {
                 result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
             }
             break
+        
+        case .sendSceneStore(let data):
+            guard let appKey = meshNetworkManager.meshNetwork?.applicationKeys[KeyIndex(data.keyIndex)] else{
+                let error = MeshNetworkError.keyIndexOutOfRange
+                let nsError = error as NSError
+                result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
+                return
+            }
+            let scene = SceneNumber(data.sceneNumber)
+            let message = SceneStore(scene)
+
+            do {
+                _ = try meshNetworkManager.send(
+                    message, 
+                    to: MeshAddress(Address(exactly: data.address)!),
+                    using: appKey
+                )
+                result(nil)
+            }catch{
+                let nsError = error as NSError
+                result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
+            }
+            break
+
         case .sendConfigModelSubscriptionAdd(let data):
             if
                 let group = meshNetworkManager.meshNetwork?.group(withAddress: MeshAddress(Address(exactly: data.subscriptionAddress)!)),

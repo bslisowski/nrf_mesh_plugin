@@ -276,6 +276,33 @@ class DoozMeshStatusCallbacks(var eventSink: EventChannel.EventSink?): MeshStatu
                     ))
                 }
             }
+            is SceneStatus -> {
+                Log.d(tag, "recieved a SceneStatus")
+                Handler(Looper.getMainLooper()).post {
+                    eventSink?.success(mapOf(
+                        "eventName" to "onSceneStatus",
+                        "source" to meshMessage.src,
+                        "destination" to meshMessage.dst,
+                        // "statusCode" to meshMessage.statusCode,
+                        "currentScene" to meshMessage.currentScene,
+                        "targetScene" to meshMessage.targetScene,
+                        "transitionResolution" to meshMessage.transitionResolution,
+                        "transitionSteps" to meshMessage.transitionSteps
+                    ))
+                }
+            }
+            is SceneRegisterStatus -> {
+                Log.d(tag, "recieved a SceneRegisterStatus")
+                Handler(Looper.getMainLooper()).post {
+                    eventSink?.success(mapOf(
+                        "eventName" to "onSceneRegisterStatus",
+                        "source" to meshMessage.src,
+                        "destination" to meshMessage.dst,
+                        "currentScene" to meshMessage.currentScene,
+                        "sceneList" to meshMessage.sceneList
+                    ))
+                }
+            }
             else -> {
                 Log.d(tag, "Unknown message received :" + meshMessage.javaClass.toString())
             }

@@ -25,11 +25,17 @@ abstract class IMeshNetwork {
   /// The currently defined group(s)
   Future<List<GroupData>> get groups;
 
+  /// The currently defined scene(s)
+  Future<List<SceneData>> get scenes;
+
   /// The max address that the current selected provisioner can allocate
   Future<int> get highestAllocatableAddress;
 
   /// Will try to add a new group in the network with the given [name]
   Future<GroupData?> addGroupWithName(String name);
+
+  /// Will try to add a new scene in the network
+  Future<SceneData?> addScene();
 
   /// Will check if the given [unicastAddress] is free of use
   Future<void> assignUnicastAddress(int unicastAddress);
@@ -119,6 +125,12 @@ class MeshNetwork implements IMeshNetwork {
   }
 
   @override
+  Future<List<SceneData>> get scenes async {
+    final scenes = await _methodChannel.invokeMethod<List>('scenes');
+    return scenes!.cast<Map>().map((e) => SceneData.fromJson(e.cast<String, dynamic>())).toList();
+  }
+
+  @override
   Future<int> get highestAllocatableAddress async =>
       (await _methodChannel.invokeMethod<int>('highestAllocatableAddress'))!;
 
@@ -147,6 +159,15 @@ class MeshNetwork implements IMeshNetwork {
       return null;
     }
     return GroupData.fromJson((result.cast<String, dynamic>()['group'] as Map).cast<String, dynamic>());
+  }
+
+  @override
+  Future<SceneData?> addScene() async {
+    final result = await _methodChannel.invokeMethod<Map>('addScene');
+    if (result!['successfullyAdded'] == false) {
+      return null;
+    }
+    return SceneData.fromJson((result.cast<String, dynamic>()['scene'] as Map).cast<String, dynamic>());
   }
 
   @override

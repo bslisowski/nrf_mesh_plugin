@@ -14,7 +14,8 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SendProvisioningPduData _$SendProvisioningPduDataFromJson(Map<String, dynamic> json) {
+SendProvisioningPduData _$SendProvisioningPduDataFromJson(
+    Map<String, dynamic> json) {
   return _SendProvisioningPduData.fromJson(json);
 }
 
@@ -25,18 +26,21 @@ mixin _$SendProvisioningPduData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SendProvisioningPduDataCopyWith<SendProvisioningPduData> get copyWith => throw _privateConstructorUsedError;
+  $SendProvisioningPduDataCopyWith<SendProvisioningPduData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SendProvisioningPduDataCopyWith<$Res> {
-  factory $SendProvisioningPduDataCopyWith(SendProvisioningPduData value, $Res Function(SendProvisioningPduData) then) =
+  factory $SendProvisioningPduDataCopyWith(SendProvisioningPduData value,
+          $Res Function(SendProvisioningPduData) then) =
       _$SendProvisioningPduDataCopyWithImpl<$Res>;
   $Res call({List<int> pdu, UnprovisionedMeshNode meshNode});
 }
 
 /// @nodoc
-class _$SendProvisioningPduDataCopyWithImpl<$Res> implements $SendProvisioningPduDataCopyWith<$Res> {
+class _$SendProvisioningPduDataCopyWithImpl<$Res>
+    implements $SendProvisioningPduDataCopyWith<$Res> {
   _$SendProvisioningPduDataCopyWithImpl(this._value, this._then);
 
   final SendProvisioningPduData _value;
@@ -62,23 +66,26 @@ class _$SendProvisioningPduDataCopyWithImpl<$Res> implements $SendProvisioningPd
 }
 
 /// @nodoc
-abstract class _$$_SendProvisioningPduDataCopyWith<$Res> implements $SendProvisioningPduDataCopyWith<$Res> {
-  factory _$$_SendProvisioningPduDataCopyWith(
-          _$_SendProvisioningPduData value, $Res Function(_$_SendProvisioningPduData) then) =
+abstract class _$$_SendProvisioningPduDataCopyWith<$Res>
+    implements $SendProvisioningPduDataCopyWith<$Res> {
+  factory _$$_SendProvisioningPduDataCopyWith(_$_SendProvisioningPduData value,
+          $Res Function(_$_SendProvisioningPduData) then) =
       __$$_SendProvisioningPduDataCopyWithImpl<$Res>;
   @override
   $Res call({List<int> pdu, UnprovisionedMeshNode meshNode});
 }
 
 /// @nodoc
-class __$$_SendProvisioningPduDataCopyWithImpl<$Res> extends _$SendProvisioningPduDataCopyWithImpl<$Res>
+class __$$_SendProvisioningPduDataCopyWithImpl<$Res>
+    extends _$SendProvisioningPduDataCopyWithImpl<$Res>
     implements _$$_SendProvisioningPduDataCopyWith<$Res> {
-  __$$_SendProvisioningPduDataCopyWithImpl(
-      _$_SendProvisioningPduData _value, $Res Function(_$_SendProvisioningPduData) _then)
+  __$$_SendProvisioningPduDataCopyWithImpl(_$_SendProvisioningPduData _value,
+      $Res Function(_$_SendProvisioningPduData) _then)
       : super(_value, (v) => _then(v as _$_SendProvisioningPduData));
 
   @override
-  _$_SendProvisioningPduData get _value => super._value as _$_SendProvisioningPduData;
+  _$_SendProvisioningPduData get _value =>
+      super._value as _$_SendProvisioningPduData;
 
   @override
   $Res call({
@@ -102,9 +109,11 @@ class __$$_SendProvisioningPduDataCopyWithImpl<$Res> extends _$SendProvisioningP
 
 @JsonSerializable(explicitToJson: true, anyMap: true)
 class _$_SendProvisioningPduData implements _SendProvisioningPduData {
-  const _$_SendProvisioningPduData(final List<int> pdu, this.meshNode) : _pdu = pdu;
+  const _$_SendProvisioningPduData(final List<int> pdu, this.meshNode)
+      : _pdu = pdu;
 
-  factory _$_SendProvisioningPduData.fromJson(Map<String, dynamic> json) => _$$_SendProvisioningPduDataFromJson(json);
+  factory _$_SendProvisioningPduData.fromJson(Map<String, dynamic> json) =>
+      _$$_SendProvisioningPduDataFromJson(json);
 
   final List<int> _pdu;
   @override
@@ -133,12 +142,16 @@ class _$_SendProvisioningPduData implements _SendProvisioningPduData {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_pdu), const DeepCollectionEquality().hash(meshNode));
+      runtimeType,
+      const DeepCollectionEquality().hash(_pdu),
+      const DeepCollectionEquality().hash(meshNode));
 
   @JsonKey(ignore: true)
   @override
-  _$$_SendProvisioningPduDataCopyWith<_$_SendProvisioningPduData> get copyWith =>
-      __$$_SendProvisioningPduDataCopyWithImpl<_$_SendProvisioningPduData>(this, _$identity);
+  _$$_SendProvisioningPduDataCopyWith<_$_SendProvisioningPduData>
+      get copyWith =>
+          __$$_SendProvisioningPduDataCopyWithImpl<_$_SendProvisioningPduData>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -149,10 +162,12 @@ class _$_SendProvisioningPduData implements _SendProvisioningPduData {
 }
 
 abstract class _SendProvisioningPduData implements SendProvisioningPduData {
-  const factory _SendProvisioningPduData(final List<int> pdu, final UnprovisionedMeshNode meshNode) =
+  const factory _SendProvisioningPduData(
+          final List<int> pdu, final UnprovisionedMeshNode meshNode) =
       _$_SendProvisioningPduData;
 
-  factory _SendProvisioningPduData.fromJson(Map<String, dynamic> json) = _$_SendProvisioningPduData.fromJson;
+  factory _SendProvisioningPduData.fromJson(Map<String, dynamic> json) =
+      _$_SendProvisioningPduData.fromJson;
 
   @override
   List<int> get pdu;
@@ -160,5 +175,6 @@ abstract class _SendProvisioningPduData implements SendProvisioningPduData {
   UnprovisionedMeshNode get meshNode;
   @override
   @JsonKey(ignore: true)
-  _$$_SendProvisioningPduDataCopyWith<_$_SendProvisioningPduData> get copyWith => throw _privateConstructorUsedError;
+  _$$_SendProvisioningPduDataCopyWith<_$_SendProvisioningPduData>
+      get copyWith => throw _privateConstructorUsedError;
 }

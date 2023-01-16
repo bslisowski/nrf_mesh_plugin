@@ -118,6 +118,7 @@ enum MessageEvent: String{
     case onMagicLevelSetStatus
     case onMagicLevelGetStatus
     case onDoozEpochStatus
+    case onSceneRegisterStatus
 }
 
 enum EventSinkKeys: String{
@@ -162,6 +163,9 @@ enum EventSinkKeys: String{
         
         case transmitCount
         case transmitIntervalSteps
+        
+        case currentScene
+        case sceneList
         
         case ttl
         

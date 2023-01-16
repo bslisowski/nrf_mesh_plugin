@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'allocated_group_range.dart';
 
@@ -10,30 +12,11 @@ part of 'allocated_group_range.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AllocatedGroupRange _$AllocatedGroupRangeFromJson(Map<String, dynamic> json) {
   return _AllocatedGroupRange.fromJson(json);
 }
-
-/// @nodoc
-class _$AllocatedGroupRangeTearOff {
-  const _$AllocatedGroupRangeTearOff();
-
-  _AllocatedGroupRange call(int lowAddress, int highAddress) {
-    return _AllocatedGroupRange(
-      lowAddress,
-      highAddress,
-    );
-  }
-
-  AllocatedGroupRange fromJson(Map<String, Object> json) {
-    return AllocatedGroupRange.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AllocatedGroupRange = _$AllocatedGroupRangeTearOff();
 
 /// @nodoc
 mixin _$AllocatedGroupRange {
@@ -42,18 +25,21 @@ mixin _$AllocatedGroupRange {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AllocatedGroupRangeCopyWith<AllocatedGroupRange> get copyWith => throw _privateConstructorUsedError;
+  $AllocatedGroupRangeCopyWith<AllocatedGroupRange> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AllocatedGroupRangeCopyWith<$Res> {
-  factory $AllocatedGroupRangeCopyWith(AllocatedGroupRange value, $Res Function(AllocatedGroupRange) then) =
+  factory $AllocatedGroupRangeCopyWith(
+          AllocatedGroupRange value, $Res Function(AllocatedGroupRange) then) =
       _$AllocatedGroupRangeCopyWithImpl<$Res>;
   $Res call({int lowAddress, int highAddress});
 }
 
 /// @nodoc
-class _$AllocatedGroupRangeCopyWithImpl<$Res> implements $AllocatedGroupRangeCopyWith<$Res> {
+class _$AllocatedGroupRangeCopyWithImpl<$Res>
+    implements $AllocatedGroupRangeCopyWith<$Res> {
   _$AllocatedGroupRangeCopyWithImpl(this._value, this._then);
 
   final AllocatedGroupRange _value;
@@ -79,28 +65,32 @@ class _$AllocatedGroupRangeCopyWithImpl<$Res> implements $AllocatedGroupRangeCop
 }
 
 /// @nodoc
-abstract class _$AllocatedGroupRangeCopyWith<$Res> implements $AllocatedGroupRangeCopyWith<$Res> {
-  factory _$AllocatedGroupRangeCopyWith(_AllocatedGroupRange value, $Res Function(_AllocatedGroupRange) then) =
-      __$AllocatedGroupRangeCopyWithImpl<$Res>;
+abstract class _$$_AllocatedGroupRangeCopyWith<$Res>
+    implements $AllocatedGroupRangeCopyWith<$Res> {
+  factory _$$_AllocatedGroupRangeCopyWith(_$_AllocatedGroupRange value,
+          $Res Function(_$_AllocatedGroupRange) then) =
+      __$$_AllocatedGroupRangeCopyWithImpl<$Res>;
   @override
   $Res call({int lowAddress, int highAddress});
 }
 
 /// @nodoc
-class __$AllocatedGroupRangeCopyWithImpl<$Res> extends _$AllocatedGroupRangeCopyWithImpl<$Res>
-    implements _$AllocatedGroupRangeCopyWith<$Res> {
-  __$AllocatedGroupRangeCopyWithImpl(_AllocatedGroupRange _value, $Res Function(_AllocatedGroupRange) _then)
-      : super(_value, (v) => _then(v as _AllocatedGroupRange));
+class __$$_AllocatedGroupRangeCopyWithImpl<$Res>
+    extends _$AllocatedGroupRangeCopyWithImpl<$Res>
+    implements _$$_AllocatedGroupRangeCopyWith<$Res> {
+  __$$_AllocatedGroupRangeCopyWithImpl(_$_AllocatedGroupRange _value,
+      $Res Function(_$_AllocatedGroupRange) _then)
+      : super(_value, (v) => _then(v as _$_AllocatedGroupRange));
 
   @override
-  _AllocatedGroupRange get _value => super._value as _AllocatedGroupRange;
+  _$_AllocatedGroupRange get _value => super._value as _$_AllocatedGroupRange;
 
   @override
   $Res call({
     Object? lowAddress = freezed,
     Object? highAddress = freezed,
   }) {
-    return _then(_AllocatedGroupRange(
+    return _then(_$_AllocatedGroupRange(
       lowAddress == freezed
           ? _value.lowAddress
           : lowAddress // ignore: cast_nullable_to_non_nullable
@@ -118,7 +108,8 @@ class __$AllocatedGroupRangeCopyWithImpl<$Res> extends _$AllocatedGroupRangeCopy
 class _$_AllocatedGroupRange implements _AllocatedGroupRange {
   const _$_AllocatedGroupRange(this.lowAddress, this.highAddress);
 
-  factory _$_AllocatedGroupRange.fromJson(Map<String, dynamic> json) => _$_$_AllocatedGroupRangeFromJson(json);
+  factory _$_AllocatedGroupRange.fromJson(Map<String, dynamic> json) =>
+      _$$_AllocatedGroupRangeFromJson(json);
 
   @override
   final int lowAddress;
@@ -133,40 +124,48 @@ class _$_AllocatedGroupRange implements _AllocatedGroupRange {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AllocatedGroupRange &&
-            (identical(other.lowAddress, lowAddress) ||
-                const DeepCollectionEquality().equals(other.lowAddress, lowAddress)) &&
-            (identical(other.highAddress, highAddress) ||
-                const DeepCollectionEquality().equals(other.highAddress, highAddress)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AllocatedGroupRange &&
+            const DeepCollectionEquality()
+                .equals(other.lowAddress, lowAddress) &&
+            const DeepCollectionEquality()
+                .equals(other.highAddress, highAddress));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(lowAddress) ^
-      const DeepCollectionEquality().hash(highAddress);
 
   @JsonKey(ignore: true)
   @override
-  _$AllocatedGroupRangeCopyWith<_AllocatedGroupRange> get copyWith =>
-      __$AllocatedGroupRangeCopyWithImpl<_AllocatedGroupRange>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(lowAddress),
+      const DeepCollectionEquality().hash(highAddress));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_AllocatedGroupRangeCopyWith<_$_AllocatedGroupRange> get copyWith =>
+      __$$_AllocatedGroupRangeCopyWithImpl<_$_AllocatedGroupRange>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AllocatedGroupRangeToJson(this);
+    return _$$_AllocatedGroupRangeToJson(
+      this,
+    );
   }
 }
 
 abstract class _AllocatedGroupRange implements AllocatedGroupRange {
-  const factory _AllocatedGroupRange(int lowAddress, int highAddress) = _$_AllocatedGroupRange;
+  const factory _AllocatedGroupRange(
+      final int lowAddress, final int highAddress) = _$_AllocatedGroupRange;
 
-  factory _AllocatedGroupRange.fromJson(Map<String, dynamic> json) = _$_AllocatedGroupRange.fromJson;
+  factory _AllocatedGroupRange.fromJson(Map<String, dynamic> json) =
+      _$_AllocatedGroupRange.fromJson;
 
   @override
-  int get lowAddress => throw _privateConstructorUsedError;
+  int get lowAddress;
   @override
-  int get highAddress => throw _privateConstructorUsedError;
+  int get highAddress;
   @override
   @JsonKey(ignore: true)
-  _$AllocatedGroupRangeCopyWith<_AllocatedGroupRange> get copyWith => throw _privateConstructorUsedError;
+  _$$_AllocatedGroupRangeCopyWith<_$_AllocatedGroupRange> get copyWith =>
+      throw _privateConstructorUsedError;
 }
