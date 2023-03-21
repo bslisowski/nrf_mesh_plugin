@@ -119,6 +119,7 @@ enum MessageEvent: String{
     case onMagicLevelGetStatus
     case onDoozEpochStatus
     case onSceneRegisterStatus
+    case onVendorModelMessageStatus
 }
 
 enum EventSinkKeys: String{
@@ -179,6 +180,8 @@ enum EventSinkKeys: String{
         case packed
         case epoch
         case extra
+
+        case params
     }
     
     enum network: String{

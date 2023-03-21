@@ -23,3 +23,4 @@ export 'send_provisioning_pdu/send_provisioning_pdu.dart';
 
 export 'scene_status/scene_status.dart';
 export 'scene_register_status/scene_register_status.dart';
+export 'vendor_message_status/vendor_message_status.dart';

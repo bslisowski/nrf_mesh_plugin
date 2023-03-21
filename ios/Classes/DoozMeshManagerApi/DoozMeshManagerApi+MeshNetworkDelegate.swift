@@ -76,12 +76,19 @@ extension DoozMeshManagerApi: MeshNetworkDelegate{
             let message: FlutterMessage = [
                 EventSinkKeys.eventName.rawValue : MessageEvent.onSceneRegisterStatus.rawValue,
                 EventSinkKeys.source.rawValue : source,
-                EventSinkKeys.destination.rawValue : destination,
+                EventSinkKeys.message.destination.rawValue : destination,
                 EventSinkKeys.message.currentScene.rawValue : status.currentScene,
                 EventSinkKeys.message.sceneList.rawValue : status.scenes
             ]
             _sendFlutterMessage(message)
-
+        case let status as VendorModelStatus:
+            let message: FlutterMessage = [
+                EventSinkKeys.eventName.rawValue : MessageEvent.onVendorModelMessageStatus.rawValue,
+                EventSinkKeys.source.rawValue : source,
+                EventSinkKeys.message.destination.rawValue : destination,
+                EventSinkKeys.message.params.rawValue : status.parameters
+            ]
+            _sendFlutterMessage(message)
         case let status as ConfigModelSubscriptionStatus:
             let message: FlutterMessage = [
                 EventSinkKeys.eventName.rawValue : MessageEvent.onConfigModelSubscriptionStatus.rawValue,

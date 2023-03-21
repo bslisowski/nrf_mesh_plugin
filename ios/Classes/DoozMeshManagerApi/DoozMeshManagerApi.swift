@@ -106,6 +106,7 @@ private extension DoozMeshManagerApi {
                     Model(sigModelId: SigModelIds.GenericLevelServer, delegate: GenericLevelServerDelegate()),
                     Model(sigModelId: SigModelIds.GenericOnOffClient, delegate: GenericOnOffClientDelegate()),
                     Model(sigModelId: SigModelIds.GenericLevelClient, delegate: GenericLevelClientDelegate()),
+                    Model(vendorModelId: 0x0001, companyId: 0x02E5, delegate: VendorModelDelegate()),
                 ])
                 meshNetworkManager.localElements = [element0]
                 delegate?.onNetworkLoaded(network)
@@ -332,16 +333,19 @@ private extension DoozMeshManagerApi {
             do{
                 let node = meshNetworkManager.meshNetwork?.node(withAddress: Address(exactly: data.nodeId)!)
                 let element = node?.element(withAddress: Address(exactly: data.elementId)!)
-                let model = element?.model(withModelId: UInt32(data.modelId))
+                let modelId = (UInt32(0x02e5) << 16) | UInt32(data.modelId)
+                let model = element?.model(withModelId: modelId)
                 let appKey = meshNetworkManager.meshNetwork?.applicationKeys[KeyIndex(data.appKeyIndex)]
-                
+
                 if let _appKey = appKey, let _model = model{
-                    
+                    print("FIRST IF")
                     if let configModelAppBind = ConfigModelAppBind(applicationKey: _appKey, to: _model){
+                        print("SECOND IF")
                         try _ =  meshNetworkManager.send(configModelAppBind, to: node!)
                         result(nil)
                     }
                 }
+                print("AFTER IF")
                 
             }catch{
                 let nsError = error as NSError
@@ -401,6 +405,99 @@ private extension DoozMeshManagerApi {
                 result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
             }
             break
+        case .sendVendorModelMessageAcked(let data):
+            guard let appKey = meshNetworkManager.meshNetwork?.applicationKeys[KeyIndex(data.keyIndex)] else{
+                let error = MeshNetworkError.keyIndexOutOfRange
+                let nsError = error as NSError
+                result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
+                return
+            }
+
+            //let message = VendorModelMessageAcked(data.params)
+            var message : MeshMessage
+            switch data.opCode{
+            case 1:
+                message = RungSetLeds(data.params)
+                break
+            case 2:
+                message = RungSetSteps(data.params)
+                break
+            case 3:
+                message = RungStartStop(data.params)
+                break
+            case 4: 
+                message = RungNextStep(data.params)
+                break
+            case 5:
+                message = RungID(data.params)
+                break
+            default:
+                print(data.opCode)
+                return
+                break
+            }
+            do{
+                
+                _ = try meshNetworkManager.send(
+                    message,
+                    to: MeshAddress(Address(exactly: data.address)!),
+                    using: appKey
+                )
+                
+                result(nil)
+                
+            }catch{
+                let nsError = error as NSError
+                result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
+            }
+
+        break
+        case .sendVendorModelMessageUnacked(let data):
+            guard let appKey = meshNetworkManager.meshNetwork?.applicationKeys[KeyIndex(data.keyIndex)] else{
+                let error = MeshNetworkError.keyIndexOutOfRange
+                let nsError = error as NSError
+                result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
+                return
+            }
+            var message : MeshMessage
+            switch data.opCode{
+            case 1:
+                message = RungSetLeds(data.params)
+                break
+            case 2:
+                message = RungSetSteps(data.params)
+                break
+            case 3:
+                message = RungStartStop(data.params)
+                break
+            case 4: 
+                message = RungNextStep(data.params)
+                break
+            case 5:
+                message = RungID(data.params)
+                break
+            default:
+                print(data.opCode)
+                return
+                break
+            }
+
+            do{
+                
+                _ = try meshNetworkManager.send(
+                    message,
+                    to: MeshAddress(Address(exactly: data.address)!),
+                    using: appKey
+                )
+                
+                result(nil)
+                
+            }catch{
+                let nsError = error as NSError
+                result(FlutterError(code: String(nsError.code), message: nsError.localizedDescription, details: nil))
+            }
+
+        break
         case .setNetworkTransmitSettings(let data):
             let _node = doozMeshNetwork?.meshNetwork.node(withAddress: Address(exactly: data.address)!)
             let message = ConfigNetworkTransmitSet(count: UInt8(data.transmitCount), steps: UInt8(data.transmitIntervalSteps))

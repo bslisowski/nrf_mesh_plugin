@@ -47,6 +47,8 @@ class MeshManagerApiEvent {
   static const lightCtlStatus = MeshManagerApiEvent._('onLightCtlStatus');
   static const lightHslStatus = MeshManagerApiEvent._('onLightHslStatus');
 
+  static const vendorMessageStatus = MeshManagerApiEvent._('onVendorModelMessageStatus');
+
   static const configModelAppStatus = MeshManagerApiEvent._('onConfigModelAppStatus');
   static const configModelSubscriptionStatus = MeshManagerApiEvent._('onConfigModelSubscriptionStatus');
   static const configModelPublicationStatus = MeshManagerApiEvent._('onConfigModelPublicationStatus');

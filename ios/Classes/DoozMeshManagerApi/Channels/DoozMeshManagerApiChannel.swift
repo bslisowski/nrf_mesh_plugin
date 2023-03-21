@@ -50,7 +50,8 @@ enum DoozMeshManagerApiChannel {
     case doozScenarioEpochSet(_ data: DoozEpochSetArguments)
     case deprovision(_ data: DeprovisionArguments)
     case sendSceneStore(_ data: SendSceneStoreArguments)
-
+    case sendVendorModelMessageAcked(_ data: SendVendorModelMessageAckedArguments)
+    case sendVendorModelMessageUnacked(_ data: SendVendorModelMessageUnackedArguments)
     case error(_ error: Error)
     
     init(call: FlutterMethodCall) {
@@ -139,7 +140,10 @@ enum DoozMeshManagerApiChannel {
             //getDeviceUuid
             case "handleWriteCallbacks":
                 self = .handleWriteCallbacks(try HandleWriteCallbacksArguments(arguments))
-            
+            case "sendVendorModelMessageAcked":
+                self = .sendVendorModelMessageAcked(try SendVendorModelMessageAckedArguments(arguments))
+            case "sendVendorModelMessageUnacked":
+                self = .sendVendorModelMessageUnacked(try SendVendorModelMessageUnackedArguments(arguments))
             case "sendSceneStore":
                 self = .sendSceneStore(try SendSceneStoreArguments(arguments))
             case "cachedProvisionedMeshNodeUuid":

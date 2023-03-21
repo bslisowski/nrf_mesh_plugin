@@ -51,6 +51,7 @@ class MeshManagerApi {
   late final _onConfigKeyRefreshPhaseStatusController = StreamController<ConfigKeyRefreshPhaseStatus>.broadcast();
   late final _onSceneStatusController = StreamController<SceneStatusData>.broadcast();
   late final _onSceneRegisterStatusController = StreamController<SceneRegisterStatusData>.broadcast();
+  late final _onVendorMessageStatusController = StreamController<VendorModelStatusData>.broadcast();
   // stream subs
   late StreamSubscription<MeshNetwork> _onNetworkLoadedSubscription;
   late StreamSubscription<MeshNetwork> _onNetworkImportedSubscription;
@@ -83,6 +84,7 @@ class MeshManagerApi {
   late StreamSubscription<ConfigKeyRefreshPhaseStatus> _onConfigKeyRefreshPhaseStatusSubscription;
   late StreamSubscription<SceneStatusData> _onSceneStatusSubscription;
   late StreamSubscription<SceneRegisterStatusData> _onSceneRegisterStatusSubscription;
+  late StreamSubscription<VendorModelStatusData> _onVendorMessageStatusSubscription;
 
   MeshNetwork? _lastMeshNetwork;
 
@@ -213,6 +215,11 @@ class MeshManagerApi {
         .where((event) => event['eventName'] == MeshManagerApiEvent.sceneRegisterStatus.value)
         .map((event) => SceneRegisterStatusData.fromJson(event))
         .listen(_onSceneRegisterStatusController.add);
+
+    _onVendorMessageStatusSubscription = _eventChannelStream
+        .where((event) => event['eventName'] == MeshManagerApiEvent.vendorMessageStatus.value)
+        .map((event) => VendorModelStatusData.fromJson(event))
+        .listen(_onVendorMessageStatusController.add);
   }
   Stream<ConfigBeaconStatus> get onConfigBeaconStatus => _onConfigBeaconStatusController.stream;
 
@@ -279,6 +286,8 @@ class MeshManagerApi {
   Stream<SceneStatusData> get onSceneStatus => _onSceneStatusController.stream;
 
   Stream<SceneRegisterStatusData> get onSceneRegisterStatus => _onSceneRegisterStatusController.stream;
+
+  Stream<VendorModelStatusData> get onVendorMessageStatus => _onVendorMessageStatusController.stream;
 
   /// Checks if the node is advertising with Node Identity
   Future<bool> isAdvertisedWithNodeIdentity(final List<int> serviceData) async {
@@ -377,7 +386,9 @@ class MeshManagerApi {
         _onSceneStatusSubscription.cancel(),
         _onSceneStatusController.close(),
         _onSceneRegisterStatusSubscription.cancel(),
-        _onSceneRegisterStatusController.close()
+        _onSceneRegisterStatusController.close(),
+        _onVendorMessageStatusSubscription.cancel(),
+        _onVendorMessageStatusController.close()
       ]);
 
   /// Loads the mesh network from the local database.
@@ -778,6 +789,40 @@ class MeshManagerApi {
       'saturation': saturation,
       'sequenceNumber': sequenceNumber,
       'keyIndex': keyIndex,
+    });
+    return status;
+  }
+
+  Future<VendorModelStatusData> sendVendorModelMessageAcked(
+      int address, int modelId, int keyIndex, int companyIdentifier, int opCode, List<int> params) async {
+    final status = _onVendorMessageStatusController.stream.firstWhere(
+      (element) => element.source == address,
+      orElse: () => const VendorModelStatusData(-1, []),
+    );
+    await _methodChannel.invokeMethod('sendVendorModelMessageAcked', {
+      'address': address,
+      'modelId': modelId,
+      'keyIndex': keyIndex,
+      'companyIdentifier': companyIdentifier,
+      'opCode': opCode,
+      'params': params
+    });
+    return status;
+  }
+
+  Future<VendorModelStatusData> sendVendorModelMessageUnacked(
+      int address, int modelId, int keyIndex, int companyIdentifier, int opCode, List<int> params) async {
+    final status = _onVendorMessageStatusController.stream.firstWhere(
+      (element) => element.source == address,
+      orElse: () => const VendorModelStatusData(-1, []),
+    );
+    await _methodChannel.invokeMethod('sendVendorModelMessageUnacked', {
+      'address': address,
+      'modelId': modelId,
+      'keyIndex': keyIndex,
+      'companyIdentifier': companyIdentifier,
+      'opCode': opCode,
+      'params': params
     });
     return status;
   }

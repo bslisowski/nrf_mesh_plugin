@@ -38,7 +38,7 @@ private extension DoozProvisionedDevice {
     
     func _handleMethodCall(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         
-        print("🥂 [\(self.classForCoder)] Received flutter call : \(call.method)")
+        //print("🥂 [\(self.classForCoder)] Received flutter call : \(call.method)")
         
         let _method = DoozProvisionedMeshNodeChannel(call: call)
         

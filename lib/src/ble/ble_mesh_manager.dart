@@ -107,7 +107,8 @@ class BleMeshManager<T extends BleMeshManagerCallbacks> extends BleManager<T> {
   @override
   Future<void> initGatt() async {
     // request highest MTU (only useful on Android)
-    final negotiatedMtu = await bleInstance.requestMtu(deviceId: device!.id, mtu: mtuSizeMax);
+    final negotiatedMtu = await bleInstance.requestMtu(deviceId: device!.id, mtu: mtuSizeMax); //mtuSizeMax
+    debugPrint("MTU: $negotiatedMtu");
     if (Platform.isAndroid) {
       mtuSize = negotiatedMtu - 3;
     } else if (Platform.isIOS) {

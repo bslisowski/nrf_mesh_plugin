@@ -551,6 +551,41 @@ class DoozMeshManagerApi(context: Context, binaryMessenger: BinaryMessenger) : S
                     result.error("102", e.message, "an error occured while checking service data")
                 }
             }
+            "sendVendorModelMessageAcked" -> {
+                val address = call.argument<Int>("address")!!
+                val modelId = call.argument<Int>("modelId")!!
+                val keyIndex = call.argument<Int>("keyIndex")!!
+                val companyIdentifier = call.argument<Int>("companyIdentifier")!!
+                val opCode = call.argument<Int>("opCode")!!
+                val params = call.argument<ArrayList<Int>>("params")!!
+
+                val meshMessage: MeshMessage = VendorModelMessageAcked(
+                        mMeshManagerApi.meshNetwork!!.getAppKey(keyIndex),
+                        modelId,
+                        companyIdentifier,
+                        opCode,
+                        arrayListToByteArray(params)
+                )
+                mMeshManagerApi.createMeshPdu(address,  meshMessage)
+                result.success(null)
+            }
+            "sendVendorModelMessageUnacked" -> {
+                val address = call.argument<Int>("address")!!
+                val modelId = call.argument<Int>("modelId")!!
+                val keyIndex = call.argument<Int>("keyIndex")!!
+                val companyIdentifier = call.argument<Int>("companyIdentifier")!!
+                val opCode = call.argument<Int>("opCode")!!
+                val params = call.argument<ArrayList<Int>>("params")!!
+                val meshMessage: MeshMessage = VendorModelMessageUnacked(
+                        mMeshManagerApi.meshNetwork!!.getAppKey(keyIndex),
+                        modelId,
+                        companyIdentifier,
+                        opCode,
+                        arrayListToByteArray(params)
+                )
+                mMeshManagerApi.createMeshPdu(address, meshMessage)
+                result.success(null)
+            }
             else -> {
                 result.notImplemented()
             }
